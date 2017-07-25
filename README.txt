@@ -15,6 +15,11 @@
 8. URL
 8.1. Namesapced URL
 8.2. URL reversing
+9. Static files
+9.1. collectstatic
+10. Deploy & Production
+11. VirtualEnv
+11.1. requirements.txt
 99. Misc
 99.1. JsonResponse
 
