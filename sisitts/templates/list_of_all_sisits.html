@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sisitter</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Welcome to Sisitter</h1>
+        <form action="/new_sisit" method="post">
+            {{ new_sisit_form }}
+            <input type="submit">
+            {% csrf_token %}
+        </form>
+        <hr/>
+        <hr/>
+        {% for sisit in sisits %}
+            <a href="/sisits/{{ sisit.author.username }}">{{ sisit.author }}</a>
+            <i>{{ sisit.get_likes_count }} likes</i>
+            <a href="/like/{{ sisit.id }}">[+]</a>
+            <br/>
+            <p>{{ sisit.content }}</p>
+            <i>{{ sisit.timestamp }}</i>
+            <hr/>
+        {% endfor %}
+    </body>
+</html>
